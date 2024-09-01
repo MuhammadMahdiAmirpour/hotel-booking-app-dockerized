@@ -12,6 +12,7 @@ services:
       SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/hotel_booking_app_db
       SPRING_DATASOURCE_USERNAME: myuser
       SPRING_DATASOURCE_PASSWORD: RoottooR123$
+      ALLOWED_ORIGINS: http://frontend
     depends_on:
       db:
         condition: service_healthy
@@ -27,6 +28,8 @@ services:
       - "80:80"
     depends_on:
       - backend
+    environment:
+      - REACT_APP_API_BASE_URL=http://localhost:9192
     networks:
         - app-network
 

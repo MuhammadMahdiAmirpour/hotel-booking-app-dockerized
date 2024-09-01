@@ -27,6 +27,8 @@ public class JwtUtils {
 	@Value("${auth.token.expirationInMills}")
 	private              int    jwtExpirationTime;
 
+	private static final String ROLES_CLAIM = "roles";
+
 	// This method used deprecated dependencies
 //	public String generateJwtTokenForUser(Authentication authentication) {
 //		HotelUserDetails userPrincipal = (HotelUserDetails) authentication.getPrincipal();
@@ -94,7 +96,7 @@ public class JwtUtils {
 
 		return JWT.create()
 				.withSubject(userPrincipal.getUsername())
-				.withClaim("roles", roles)
+				.withClaim(ROLES_CLAIM, roles)
 				.withIssuedAt(Date.from(now))
 				.withExpiresAt(Date.from(expirationTime))
 				.sign(algorithm());
@@ -113,6 +115,18 @@ public class JwtUtils {
 			return jwt.getSubject();
 		} catch (JWTVerificationException e) {
 			logger.error("Invalid JWT token has been received : {}", e.getMessage());
+			return null;
+		}
+	}
+
+	public List<String> getRolesFromToken(String token) {
+		try {
+			DecodedJWT jwt = JWT.require(algorithm())
+					                 .build()
+					                 .verify(token);
+			return jwt.getClaim("roles").asList(String.class);
+		} catch (JWTVerificationException e) {
+			logger.error("Invalid JWT token: {}", e.getMessage());
 			return null;
 		}
 	}
