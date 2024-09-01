@@ -1,8 +1,20 @@
-import axios from "axios"
+import axios from 'axios';
+
+const isRunningInDocker = () => {
+    return import.meta.env.VITE_RUNNING_IN_DOCKER === 'true';
+};
+
+const getBaseURL = () => {
+    if (isRunningInDocker()) {
+        return import.meta.env.VITE_API_BASE_URL || 'http://backend:9192';
+    } else {
+        return 'http://localhost:9192';
+    }
+};
 
 export const api = axios.create({
-    baseURL: process.env.REACT_APP_API_BASE_URL || "http://localhost:9192"
-})
+    baseURL: getBaseURL()
+});
 
 export const getHeader = () => {
     const token = localStorage.getItem("token")
