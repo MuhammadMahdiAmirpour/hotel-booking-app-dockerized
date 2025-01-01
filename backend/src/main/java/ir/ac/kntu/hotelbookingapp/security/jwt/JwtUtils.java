@@ -29,36 +29,6 @@ public class JwtUtils {
 
 	private static final String ROLES_CLAIM = "roles";
 
-	// This method used deprecated dependencies
-//	public String generateJwtTokenForUser(Authentication authentication) {
-//		HotelUserDetails userPrincipal = (HotelUserDetails) authentication.getPrincipal();
-//		List<String> roles = userPrincipal.getAuthorities()
-//				.stream()
-//				.map(GrantedAuthority::getAuthority).toList();
-//		return Jwts.builder().
-//				setSubject(userPrincipal.getUsername())
-//				.claim("roles", roles)
-//				.issuedAt(new Date())
-//				.setExpiration(new Date((new Date()).getTime() + jwtExpirationTime))
-//				.signWith(key(), SignatureAlgorithm.HS256).compact();
-//	}
-
-//	public boolean validateToken(String token) {
-//		try {
-//			Jwts.parserBuilder().setSignKey(key()).build().parse(token);
-//			return true;
-//		} catch (MalformedJwtException e) {
-//			logger.error("Invalid JWT token : {} ", e.getMessage());
-//		} catch (ExpiredJWTExcpetion e) {
-//			logger.error("Expired token : {} ", e.getMessage());
-//		} catch (UnsupportedJWTException e) {
-//			logger.error("This token is not supported : {}", e.getMessage());
-//		} catch (IllegalArgumentException e) {
-//			logger.error("No claims found : {}", e.getMessage());
-//		}
-//		return false;
-//	}
-
 	public boolean validateToken(String token) {
 		try {
 			JWTVerifier verifier = JWT.require(algorithm()).build();
@@ -131,14 +101,4 @@ public class JwtUtils {
 		}
 	}
 
-//	priavte Key key() {
-//		return Keys.hmacShaKeyFor(Decoders.BASE64.decode(jwtSecret));
-//	}
-//
-//	public String getUserNameFromToken(String token) {
-//		return Jwts.parserBuilder()
-//				.setSignKey(key())
-//				.build()
-//				.parseClaimsJws(token).getBody().getSubject();
-//	}
 }
