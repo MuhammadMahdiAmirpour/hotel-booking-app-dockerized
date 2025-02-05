@@ -85,6 +85,12 @@ hotel-booking-app/
 └── README.md
 ```
 
+## 🎓 Acknowledgments
+
+This project was developed following these excellent tutorials:
+- [Spring Boot Hotel Management Project](https://www.youtube.com/watch?v=0XJu4Nnl0Kc)
+- [Full Stack Project with Spring Boot and React](https://www.youtube.com/watch?v=7gZwWSsGIDE)
+
 ## 👨‍💻 Author
 
 **Muhammad Mahdi Amirpour**
@@ -100,3 +106,4 @@ hotel-booking-app/
 <div align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,14,25,27&height=100&section=footer"/>
 </div>
+```
