@@ -96,8 +96,6 @@ This project was developed following these excellent tutorials:
 **Muhammad Mahdi Amirpour**
 - GitHub: [@MuhammadMahdiAmirpour](https://github.com/MuhammadMahdiAmirpour)
 
----
-
 <div align="center">
   <sub>Built with ❤️ by Muhammad Mahdi Amirpour</sub>
 </div>
