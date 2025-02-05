@@ -104,4 +104,3 @@ This project was developed following these excellent tutorials:
 <div align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,14,25,27&height=100&section=footer"/>
 </div>
-```
