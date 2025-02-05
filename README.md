@@ -65,10 +65,6 @@ Password: 123456
   - Booking oversight
   - User management
 
-## 📝 API Documentation
-
-The API documentation is available at `http://localhost:8080/swagger-ui.html` when running the application.
-
 ## 🏗️ Project Structure
 
 ```
@@ -96,6 +92,8 @@ This project was developed following these excellent tutorials:
 **Muhammad Mahdi Amirpour**
 - GitHub: [@MuhammadMahdiAmirpour](https://github.com/MuhammadMahdiAmirpour)
 
+---
+
 <div align="center">
   <sub>Built with ❤️ by Muhammad Mahdi Amirpour</sub>
 </div>
@@ -104,3 +102,6 @@ This project was developed following these excellent tutorials:
 <div align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,14,25,27&height=100&section=footer"/>
 </div>
+
+
+Would you like any other adjustments to make the README more accurate to your project?
